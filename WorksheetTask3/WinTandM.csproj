@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27D86737-EEBD-4CE3-947F-220C2E49176B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinTandM</RootNamespace>
+    <AssemblyName>WinTandM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\FilingController.cs" />
+    <Compile Include="IMazeDescriber.cs" />
+    <Compile Include="View\DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UnsavedDataWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UnsavedDataWarning.Designer.cs">
+      <DependentUpon>UnsavedDataWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filer\Compressor.cs" />
+    <Compile Include="Model\Filer\DeCompressor.cs" />
+    <Compile Include="Controller\LevelBuilderController.cs" />
+    <Compile Include="View\MazeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MazeForm.Designer.cs">
+      <DependentUpon>MazeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filer\IFiler.cs" />
+    <Compile Include="View\LoadOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoadOptionsDialog.Designer.cs">
+      <DependentUpon>LoadOptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LevelBuilderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\LevelBuilderView.Designer.cs">
+      <DependentUpon>LevelBuilderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LevelBuilder\IMaze.cs" />
+    <Compile Include="Model\LevelBuilder\IMazeObserver.cs" />
+    <Compile Include="Model\LevelBuilder\Location.cs" />
+    <Compile Include="Model\LevelBuilder\Maze.cs" />
+    <Compile Include="Model\LevelBuilder\Tile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SavePromptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SavePromptDialog.Designer.cs">
+      <DependentUpon>SavePromptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filer\WinFormsFiler.cs" />
+    <EmbeddedResource Include="View\DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UnsavedDataWarning.resx">
+      <DependentUpon>UnsavedDataWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MazeForm.resx">
+      <DependentUpon>MazeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoadOptionsDialog.resx">
+      <DependentUpon>LoadOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LevelBuilderView.resx">
+      <DependentUpon>LevelBuilderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\SavePromptDialog.resx">
+      <DependentUpon>SavePromptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheseusImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T_BtnImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\M_BtnImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_BtnImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
